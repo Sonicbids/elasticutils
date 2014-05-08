@@ -34,7 +34,7 @@ class ESTestCase(TestCase):
     index_name = 'elasticutilstest'
     mapping_type_name = 'elasticutilsmappingtype'
     es_settings = {
-        'urls': ['http://localhost:9200']
+        'urls': ['localhost:9200']
     }
     mapping = {}
     data = []

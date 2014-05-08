@@ -117,7 +117,7 @@ def get_es(urls=None, timeout=DEFAULT_TIMEOUT, force_new=False, **settings):
        cached
 
     :arg urls: list of uris; Elasticsearch hosts to connect to,
-        defaults to ``['http://localhost:9200']``
+        defaults to ``['localhost:9200']``
     :arg timeout: int; the timeout in seconds, defaults to 5
     :arg force_new: Forces get_es() to generate a new Elasticsearch
         object rather than pulling it from cache.

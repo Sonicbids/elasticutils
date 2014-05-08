@@ -56,7 +56,7 @@ file:
    This is a list of Elasticsearch urls. In development this will look
    like::
 
-       ES_URLS = ['http://localhost:9200']
+       ES_URLS = ['localhost:9200']
 
 .. data:: ES_INDEXES
 

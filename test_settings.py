@@ -4,7 +4,7 @@ import os
 ROOT = os.path.abspath(os.path.dirname(__file__))
 
 
-ES_URLS = ['http://localhost:9200']
+ES_URLS = ['localhost:9200']
 ES_INDEXES = {'default': ['elasticutilstest']}
 ES_TIMEOUT = 10
 ES_DISABLED = False
