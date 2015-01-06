@@ -1810,15 +1810,7 @@ class ListSearchResults(SearchResults):
     """
     def set_objects(self, results):
         if self.fields:
-            getter = itemgetter(*self.fields)
-            objs = [(getter(r['fields']), r) for r in results]
-
-            # itemgetter returns an item--not a tuple of one item--if
-            # there is only one thing in self.fields. Since we want
-            # this to always return a list of tuples, we need to fix
-            # that case here.
-            if len(self.fields) == 1:
-                objs = [((obj,), r) for obj, r in objs]
+            objs = [(tuple([r['fields'].get(f, None) for f in self.fields]), r) for r in results]
         else:
             objs = [(r['_source'].values(), r) for r in results]
         self.objects = [decorate_with_metadata(TupleResult(obj), r)
