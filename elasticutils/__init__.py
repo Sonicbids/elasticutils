@@ -1810,7 +1810,7 @@ class ListSearchResults(SearchResults):
     """
     def set_objects(self, results):
         if self.fields:
-            objs = [(tuple([r['fields'].get(f, None) for f in self.fields]), r) for r in results]
+            objs = [(tuple([r['fields'].get(f, None) for f in self.fields]), r) for r in results if 'fields' in r]
         else:
             objs = [(r['_source'].values(), r) for r in results]
         self.objects = [decorate_with_metadata(TupleResult(obj), r)
