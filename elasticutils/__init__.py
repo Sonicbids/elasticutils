@@ -1,7 +1,6 @@
 import copy
 import logging
 from datetime import datetime
-from operator import itemgetter
 
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk_index
